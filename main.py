@@ -1,13 +1,14 @@
 import os
 import argparse
 
+# Define the argument parser
 parser = argparse.ArgumentParser()
 parser.add_argument("input_path", metavar="input_path", type=str, help="Enter your input path")
 parser.add_argument("--o", metavar="output_path", type=str, help="(Optional) Enter your output path. Default is the input path")
 parser.add_argument("--tg", metavar="tree_ignore", type=str, help="(Optional) Enter your path for .treeignore. Default is the input path")
 
+# Parse arguments
 args = parser.parse_args()
-
 input_path = args.input_path #"C:\\Users\\geniu\\OneDrive\\Desktop\\BuzzBot\\BuzzBot"
 output_path = args.o if args.o else args.input_path
 tree_ignore_path = args.tg if args.tg else args.input_path
@@ -35,7 +36,19 @@ if os.path.isfile(treeignore_path):
 else:
     print("Tree Ignore NOT Found. Continuing the process...")
 
+
 def create_file_tree(path, last_folder=False):
+    """
+    Creates a file tree when given a path.
+    
+    Args:
+            path (string): A string containing the path of the folder
+            last_folder (boolean): A boolean indicating if the path given is the last folder in the tree.
+                                   Intended to be used by sub-folders so don't touch it unless you have to.
+                                   Used to help formatting. 
+        Returns:
+            out (string): A string containing the file tree of the given path 
+    """
     # Uncomment for debugging
     # print(path)
     
@@ -71,6 +84,7 @@ def create_file_tree(path, last_folder=False):
                 else:
                     out = out + "│   " + line + "\n"
     return out
+
 
 print("Starting the process...")
 out = create_file_tree(input_path)
