@@ -60,8 +60,9 @@ def create_file_tree(path, last_folder=False):
     if len(files) == 0:
         return out
     elif len(files) == 1:
-        out += f"└── {files[0]}\n"
-        return out
+        if os.path.isfile(files[0]):
+            out += f"└── {files[0]}\n"
+            return out
 
     for i, file_name in enumerate(files):
         # Add files/folders into file tree
