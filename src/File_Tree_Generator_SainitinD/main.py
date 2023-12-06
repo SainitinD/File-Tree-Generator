@@ -13,31 +13,28 @@ import os
 # output_path = args.o if args.o else args.input_path
 # tree_ignore_path = args.tg if args.tg else args.input_path
 
+# print(f"Received input path: {input_path}")
 
+# if args.o:
+#     print(f"Received output path: {output_path}")
+# else:
+#     print(f"Not received output path. Using input path: {input_path}")
 
+# if args.tg:
+#     print(f"Received tree ignore path: {tree_ignore_path}")
+# else:
+#     print(f"Not received tree ignore path. Using input path: {input_path}")
 
-print(f"Received input path: {input_path}")
+# treeignore_path = os.path.join(tree_ignore_path, ".treeignore")
 
-if args.o:
-    print(f"Received output path: {output_path}")
-else:
-    print(f"Not received output path. Using input path: {input_path}")
-
-if args.tg:
-    print(f"Received tree ignore path: {tree_ignore_path}")
-else:
-    print(f"Not received tree ignore path. Using input path: {input_path}")
-
-treeignore_path = os.path.join(tree_ignore_path, ".treeignore")
-
-# Optional: Reads provided '.treeignore' to not consider certain files/folders
-ignore_folders = []
-if os.path.isfile(treeignore_path):
-    with open(treeignore_path) as f:
-        ignore_folders = f.read().split("\n")
-    print("Tree Ignore FOUND! Not considering the following files/folders \n", ignore_folders)
-else:
-    print("Tree Ignore NOT Found. Continuing the process...")
+# # Optional: Reads provided '.treeignore' to not consider certain files/folders
+# ignore_folders = []
+# if os.path.isfile(treeignore_path):
+#     with open(treeignore_path) as f:
+#         ignore_folders = f.read().split("\n")
+#     print("Tree Ignore FOUND! Not considering the following files/folders \n", ignore_folders)
+# else:
+#     print("Tree Ignore NOT Found. Continuing the process...")
 
 
 def create_file_tree(path, last_folder=False):
