@@ -6,7 +6,7 @@ I made it because I couldn't find any python packages that did this. The project
 
 Download the package using the following command `pip install SupaFileTree`
 
-See the pypi file (here)[https://pypi.org/project/SupaFileTree/]
+See the pypi file [here](https://pypi.org/project/SupaFileTree/)
 
 # Project Output
 
