@@ -2,29 +2,37 @@ import os
 
 class FTree():
     def __init__(self, input_path, out_path=None, treeignore_path=None):
-        self.input_path = input_path
-        print(f"Received input path: {input_path}")
-
-        if out_path:
-            print(f"Received output path: {out_path}")
-        else:
-            print(f"Not received output path. Using input path: {input_path}")
-
+        self.input_path = input_path        
+        self.out_path = out_path
+        self.treeignore_path = treeignore_path
+        self.ignore_folders = []
+        self._read_tree_ignore()
+    
+    
+    def _read_tree_ignore(self):
         if treeignore_path:
-            print(f"Received tree ignore path: {treeignore_path}")
+            print(f"Received tree ignore path: {self.treeignore_path}")
         else:
-            print(f"Not received tree ignore path. Using input path: {input_path}")
+            print(f"Not received tree ignore path. Using input path: {self.input_path}")
+            self.treeignore_path = self.input_path
         
-        self.out_path = out_path if out_path else input_path
-        self.treeignore_path = treeignore_path if treeignore_path else input_path
+        treeignore_path = os.path.join(self.tree_ignore_path, ".treeignore")
+
+        # Optional: Reads provided '.treeignore' to not consider certain files/folders
+        if os.path.isfile(treeignore_path):
+            with open(treeignore_path) as f:
+                self.ignore_folders = f.read().split("\n")
+            print("Tree Ignore FOUND! Not considering the following files/folders \n", self.ignore_folders)
+        else:
+            print("Tree Ignore NOT Found. Continuing the process...")
 
 
-    def create_file_tree(self, path, last_folder=False):
+    def create_file_tree(self, path=None, last_folder=False):
         """
         Creates a file tree when given a path.
         
         Args:
-                path (string): A string containing the path of the folder
+                path (string): A string containing the input path of the folder. Default value is the input_path
                 last_folder (boolean): A boolean indicating if the path given is the last folder in the tree.
                                     Intended to be used by sub-folders so don't touch it unless you have to.
                                     Used to help formatting. 
@@ -34,9 +42,18 @@ class FTree():
         # Uncomment for debugging
         # print(path)
         
+        if not path: path = self.input_path
+        print(f"Received input path: {self.input_path}")
+
+        if out_path:
+            print(f"Received output path: {self.out_path}")
+        else:
+            print(f"Not received output path. Using input path: {self.input_path}")
+            self.out_path = self.input_path
+        
         out = ""
         files = os.listdir(path)
-        files = [f for f in files if f not in ignore_folders]  # O(N*K)
+        files = [f for f in files if f not in self.ignore_folders]  # O(N*K)
         
         # Handle edge case
         if len(files) == 0:
