@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/File_Tree_Generator_SainitinD/__init__.py
+src/File_Tree_Generator_SainitinD/main.py
+src/File_Tree_Generator_SainitinD.egg-info/PKG-INFO
+src/File_Tree_Generator_SainitinD.egg-info/SOURCES.txt
+src/File_Tree_Generator_SainitinD.egg-info/dependency_links.txt
+src/File_Tree_Generator_SainitinD.egg-info/top_level.txt

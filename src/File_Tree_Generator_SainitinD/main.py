@@ -9,7 +9,7 @@ parser.add_argument("--tg", metavar="tree_ignore", type=str, help="(Optional) En
 
 # Parse arguments
 args = parser.parse_args()
-input_path = args.input_path #"C:\\Users\\geniu\\OneDrive\\Desktop\\BuzzBot\\BuzzBot"
+input_path = args.input_path
 output_path = args.o if args.o else args.input_path
 tree_ignore_path = args.tg if args.tg else args.input_path
 
