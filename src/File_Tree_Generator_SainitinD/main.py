@@ -1,17 +1,20 @@
 import os
-import argparse
+# import argparse
 
-# Define the argument parser
-parser = argparse.ArgumentParser()
-parser.add_argument("input_path", metavar="input_path", type=str, help="Enter your input path")
-parser.add_argument("--o", metavar="output_path", type=str, help="(Optional) Enter your output path. Default is the input path")
-parser.add_argument("--tg", metavar="tree_ignore", type=str, help="(Optional) Enter your path for .treeignore. Default is the input path")
+# # Define the argument parser
+# parser = argparse.ArgumentParser()
+# parser.add_argument("input_path", metavar="input_path", type=str, help="Enter your input path")
+# parser.add_argument("--o", metavar="output_path", type=str, help="(Optional) Enter your output path. Default is the input path")
+# parser.add_argument("--tg", metavar="tree_ignore", type=str, help="(Optional) Enter your path for .treeignore. Default is the input path")
 
-# Parse arguments
-args = parser.parse_args()
-input_path = args.input_path
-output_path = args.o if args.o else args.input_path
-tree_ignore_path = args.tg if args.tg else args.input_path
+# # Parse arguments
+# args = parser.parse_args()
+# input_path = args.input_path
+# output_path = args.o if args.o else args.input_path
+# tree_ignore_path = args.tg if args.tg else args.input_path
+
+
+
 
 print(f"Received input path: {input_path}")
 
