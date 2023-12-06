@@ -1,10 +1,11 @@
 import os
 
 class FileTree():
-    def __init__(self, input_path, out_path=None, tree_ignore_path=None):
+    def __init__(self, input_path, out_path=None, tree_ignore_path=None, debug=False):
         self.input_path = input_path        
         self.out_path = out_path
         self.tree_ignore_path = tree_ignore_path
+        self.debug = debug
         self.ignore_folders = []
         self._read_tree_ignore()
     
@@ -14,9 +15,9 @@ class FileTree():
         Reads the .treeignore file at the tree ignore path or input path. Intended to be used internally
         """
         if self.tree_ignore_path:
-            print(f"Received tree ignore path: {self.tree_ignore_path}")
+            if self.debug: print(f"Received tree ignore path: {self.tree_ignore_path}")
         else:
-            print(f"Not received tree ignore path. Using input path: {self.input_path}")
+            if self.debug: print(f"Not received tree ignore path. Using input path: {self.input_path}")
             self.tree_ignore_path = self.input_path
         
         self.tree_ignore_path = os.path.join(self.tree_ignore_path, ".treeignore")
@@ -25,20 +26,20 @@ class FileTree():
         if os.path.isfile(self.tree_ignore_path):
             with open(self.tree_ignore_path) as f:
                 self.ignore_folders = f.read().split("\n")
-            print("Tree Ignore FOUND! Not considering the following files/folders \n", self.ignore_folders)
+            if self.debug: print("Tree Ignore FOUND! Not considering the following files/folders \n", self.ignore_folders)
         else:
-            print("Tree Ignore NOT Found. Continuing the process...")
+            if self.debug: print("Tree Ignore NOT Found. Continuing the process...")
 
     def create(self):
         """
         Creates a file tree using the provided input path and stores it in "out.txt" in the provided output path (or in inputpath)
         """
-        print(f"Received input path: {self.input_path}")
+        if self.debug: print(f"Received input path: {self.input_path}")
 
         if self.out_path:
-            print(f"Received output path: {self.out_path}")
+            if self.debug: print(f"Received output path: {self.out_path}")
         else:
-            print(f"Not received output path. Using input path: {self.input_path}")
+            if self.debug: print(f"Not received output path. Using input path: {self.input_path}")
             self.out_path = self.input_path
         
         
@@ -66,7 +67,7 @@ class FileTree():
                 out (string): A string containing the file tree of the given path 
         """
         # Uncomment for debugging
-        # print(path)
+        if self.debug: print(path)
         
         out = ""
         files = os.listdir(path)
