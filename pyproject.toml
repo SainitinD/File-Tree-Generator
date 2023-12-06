@@ -1,6 +1,6 @@
 [project]
-name = "FTree_SainitinD"
-version = "0.0.1"
+name = "SupaFileTree"
+version = "0.1.0"
 authors = [
   { name="Sainitin Daverpally", email="s.daverpally@gmail.com" },
 ]

@@ -1,4 +1,4 @@
-# File Tree Generator
+# Supa File Tree
 
 A project that when given a folder path, generates a tree of all the files inside it. I created this using pure python and its base packages.
 
