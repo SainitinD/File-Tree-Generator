@@ -49,6 +49,8 @@ class FileTree():
         print("Successfully Completed :D")
         print(f"Output stored at... {os.path.join(self.out_path, 'out.txt')}")
         
+        return out
+        
         
 
     def _create_file_tree(self, path, last_folder=False):
