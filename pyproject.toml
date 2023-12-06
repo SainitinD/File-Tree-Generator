@@ -1,5 +1,5 @@
 [project]
-name = "File_Tree_Generator_SainitinD"
+name = "Ftree_SainitinD"
 version = "0.0.1"
 authors = [
   { name="Sainitin Daverpally", email="s.daverpally@gmail.com" },
@@ -16,6 +16,3 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/SainitinD/File-Tree-Generator"
 Issues = "https://github.com/SainitinD/File-Tree-Generator/issues"
-
-
-py -m pip install --index-url https://test.pypi.org/simple/ --no-deps File-Tree-Generator-SainitinD

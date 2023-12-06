@@ -1,41 +1,4 @@
 import os
-# import argparse
-
-# # Define the argument parser
-# parser = argparse.ArgumentParser()
-# parser.add_argument("input_path", metavar="input_path", type=str, help="Enter your input path")
-# parser.add_argument("--o", metavar="output_path", type=str, help="(Optional) Enter your output path. Default is the input path")
-# parser.add_argument("--tg", metavar="tree_ignore", type=str, help="(Optional) Enter your path for .treeignore. Default is the input path")
-
-# # Parse arguments
-# args = parser.parse_args()
-# input_path = args.input_path
-# output_path = args.o if args.o else args.input_path
-# tree_ignore_path = args.tg if args.tg else args.input_path
-
-# print(f"Received input path: {input_path}")
-
-# if args.o:
-#     print(f"Received output path: {output_path}")
-# else:
-#     print(f"Not received output path. Using input path: {input_path}")
-
-# if args.tg:
-#     print(f"Received tree ignore path: {tree_ignore_path}")
-# else:
-#     print(f"Not received tree ignore path. Using input path: {input_path}")
-
-# treeignore_path = os.path.join(tree_ignore_path, ".treeignore")
-
-# # Optional: Reads provided '.treeignore' to not consider certain files/folders
-# ignore_folders = []
-# if os.path.isfile(treeignore_path):
-#     with open(treeignore_path) as f:
-#         ignore_folders = f.read().split("\n")
-#     print("Tree Ignore FOUND! Not considering the following files/folders \n", ignore_folders)
-# else:
-#     print("Tree Ignore NOT Found. Continuing the process...")
-
 
 class FTree():
     def __init__(self, input_path, out_path=None, treeignore_path=None):
