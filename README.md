@@ -46,7 +46,6 @@ input_path = "C:\\Users\\otherfile\\project"
 
 ftree = FileTree(input_path=input_path)
 ftree.create()
-
 ```
 
 This will create a file tree and store the output at \_`C:\Users\otherfile\project\out.txt`. Alternatively, you can also modify the last line to have a variable take the result of `ftree.create()` to capute the output like so
