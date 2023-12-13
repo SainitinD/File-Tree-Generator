@@ -1,7 +1,7 @@
-# Supa File Tree
-A project that when given a folder path, generates a tree of all the files inside it. I created this using pure python and its base packages.
+# SupaFileTree
+A project that when given a folder path, generates a tree of all the files inside it.
 
-I made it because I couldn't find any python packages that did this. The project is published on pypi on 12/6/2023. I intend to fix issues if they rise or any feature requests so feel free to add them here :D
+I created this using pure python and its base packages. I made it because I couldn't find any python packages that did this. The project is published on pypi on 12/6/2023. I intend to fix issues if they rise or any feature requests so feel free to add them here :D
 
 Download the package using the following command `pip install SupaFileTree`
 
